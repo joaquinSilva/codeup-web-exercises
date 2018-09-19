@@ -1,1 +1,3 @@
 Getting Git is legit.
+
+It is legit to get from Git.
