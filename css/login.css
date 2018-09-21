@@ -23,7 +23,7 @@ fieldset {
     -moz-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     padding: 1em;
-    border: 0;
+    border: none;
     background-color: #ffffff;
     /* There must be 1em between the content and the border of this element */
     /* It should have no border */
@@ -59,7 +59,7 @@ fieldset {
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Calculate based on the padding of the `.btn` class */
-    width: calc(100% - 6px);
+    width: calc(100% - 4px);
 }
 
 .btn {
