@@ -1,0 +1,81 @@
+
+body {
+    background-color: #000;
+    font-size: 1em;
+    font-family: 'Acme', sans-serif;
+}
+
+#wrapper {
+    background-image: url("../img/gray_sand.png");
+    background-size: auto;
+
+}
+
+h1, h2 {
+    text-decoration: underline;
+    color: #006bb3;
+}
+
+h1#top  {
+    text-align: center;
+    font-size: 4em;
+    margin: 0;
+    border: 5px;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+}
+
+ul {
+    list-style: square;
+}
+
+#l1 {
+    padding-left: 10em;
+}
+
+#l2 {
+    padding-left: 20em;
+}
+
+#l3 {
+    padding-left: 30em;
+}
+
+table, tr, td   {
+    border: 2px solid #fff;
+}
+table   {
+    width: 50%;
+}
+
+tr  {
+    height: 1.5em;
+}
+td, th  {
+    font-size: 2em;
+}
+
+td  {
+    padding-left: 12px;
+}
+
+td.money   {
+    text-align: center;
+}
+
+a:visited   {
+    color:  #cc9900;
+}
+a:link  {
+    color:  #00cc99;
+}
+a:active    {
+    color: #ff0066;
+    text-decoration: underline;
+}
+a:hover {
+    color: #7FFF00;
+    font-size: 2em;
+}
+
+
