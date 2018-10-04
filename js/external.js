@@ -83,7 +83,7 @@ alert("Awesome! Your total paycheck amount before taxes is $" + " " + totalPayme
 var classIsFull = confirm('Click "OK" if the class is full and there are no seats left.');
 var classSchedulesCheck = confirm('Click "OK" if your schedule has no conflicts with the class schedule.');
 var studentEnrolled = !classIsFull && classSchedulesCheck;
-alert (studentEnrolled);
+alert(studentEnrolled);
 
 // Product Offer
 // A product offer can be applied only if people buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
@@ -94,9 +94,9 @@ alert (studentEnrolled);
 //     var isPremiumMember; // boolean
 //     var productDiscountApplied = premiumMember || (numberOfItems > 2 && offerValid);
 
-
+var numberOfItemsForDiscount = parseFloat(prompt("How many items must be bought for discount to be applied?"))
 var numberOfItems = parseFloat(prompt("How many items are you buying?"));
 var isPremiumMember = confirm('Click "OK" if you are a premium member.');
 var offerIsValid =  confirm('Click "OK" if the offer has not expired.');
-var productDiscountApplied = (isPremiumMember) || ((numberOfItems > 2) && offerIsValid);
+var productDiscountApplied = ((isPremiumMember) && offerIsValid) || ((numberOfItems >= numberOfItemsForDiscount) && offerIsValid);
 alert(productDiscountApplied);

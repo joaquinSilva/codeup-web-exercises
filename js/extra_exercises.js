@@ -62,19 +62,52 @@
 //   • Values coming from users will be strings. Ensure that you convert these values to numbers before doing the math.
 //   • Keeptheinputsandoutputsseparatefromthenumerical conversions and other processing.
 //   • Generate a single output statement with line breaks in the appropriate spots.
+//
+// var userNumber1 = parseFloat(prompt("Please enter a number!"));
+// var userNumber2 = parseFloat(prompt("Please enter a 2nd number!"));
+//
+// var plus = userNumber1 + userNumber2;
+// var minus = userNumber1 - userNumber2;
+// var multiply = userNumber1 * userNumber2;
+// var divide = userNumber1 / userNumber2;
+//
+// var formula = ("What is the first number?: " + userNumber1 + "\n" + " What is the second number?: " + userNumber2 + "\n"
+//     userNumber1 + " + " + userNumber2 + " = " plus + ' ' + "\n"
+//     userNumber1 + " - " + userNumber2 + " = " minus + " " + "\n"
+//     userNumber1 + " * " + userNumber2 + " = " multiply + " " + "\n"
+//     userNumber1 + " / " + userNumber2 + " = " divide.');
+//
+// alert(formula);
 
-var userNumber1 = parseFloat(prompt("Please enter a number!"));
-var userNumber2 = parseFloat(prompt("Please enter a 2nd number!"));
+//
+// FUNCTIONS EXAMPLES
 
-var plus = userNumber1 + userNumber2;
-var minus = userNumber1 - userNumber2;
-var multiply = userNumber1 * userNumber2;
-var divide = userNumber1 / userNumber2;
+//func takes in a string
 
-var formula = ("What is the first number?: " + userNumber1 + "\n" + " What is the second number?: " + userNumber2 + "\n"
-    userNumber1 + " + " + userNumber2 + " = " plus + ' ' + "\n"
-    userNumber1 + " - " + userNumber2 + " = " minus + " " + "\n"
-    userNumber1 + " * " + userNumber2 + " = " multiply + " " + "\n"
-    userNumber1 + " / " + userNumber2 + " = " divide.');
+// returns true if string contains "a"
+// returns false if does not
+// test function
 
-alert(formula);
+function hasLetterA(strInput) {
+    var output;
+    var hasSmallA = strInput.indexOf('a');
+    var hasCapA = strInput.indexOf('A');
+    output = (hasSmallA !== -1) || (hasCapA !== -1) ;
+    return output;
+}
+    console.log(hasLetterA('box'));
+
+// IIFE statement to wrap a javascript file to protect it from the global window and confusion by conflicting variables
+
+()();
+
+then
+
+(function(){})();
+
+then
+
+(function() {
+    "use strict";
+
+})();
