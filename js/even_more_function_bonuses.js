@@ -5,6 +5,16 @@
 // ================================= EVEN MORE FUNCTION BONUSES
 //
 // 1) Create a function that will return how many whitespace characters are at the beginning and end of a string.
+
+// function whiteSpace(input) {
+//     var initialInput = input.length;
+//     var trimmedInput = input.trim().length;
+//     var numberOfWhiteSpaces = initialInput - trimmedInput;
+//     return numberOfWhiteSpaces;
+// }
+//
+// console.log(whiteSpace("  hello world    "));
+
 //
 // 2) Create a function that takes in two string inputs. If the second string input is present in the first, return the first input string with the second input string removed from it. If the second string input is present multiple times in the first, the second string will only be removed where it first occurs in the first string. If the second string input is not present in the first, return the first string as entered in the function.
 //

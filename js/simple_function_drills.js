@@ -59,4 +59,15 @@
 
 // Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
 
+function doMath(operator, a, b) {
+    if (operator === "+") {
+        return parseFloat(a) + parseFloat(b);
+    } else if (operator === "-") {
+        return parseFloat(a) - parseFloat(b);
+    } else if (operator === "*") {
+        return parseFloat(a) * parseFloat(b);
+    } else return parseFloat(a) / parseFloat(b);
+}
+
+console.log(doMath("/", "40", "10"));
 // });
