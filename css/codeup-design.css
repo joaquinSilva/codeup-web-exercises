@@ -1,0 +1,158 @@
+:root {
+    --red-color: #E6563B;
+    --orange-color: #EB9D3A;
+    --green-color: #7CB06C;
+    --blue-color: #00ABA9;
+    --lgt-gray-color: #F0f0f0;
+    --drk-gray-color: #E6E6E6;
+}
+
+* {
+    font-family: 'Abel', sans-serif;
+}
+
+h1, h2,
+h3, h4,
+h5, h6 {
+    font-family: 'Anton', sans-serif;
+}
+
+
+
+i {
+    color: rgb(0, 158, 247);
+}
+
+.red-background {
+    background-color: var(--red-color);
+}
+.orange-background {
+    background-color: var(--orange-color);
+}
+.green-background {
+    background-color: var(--green-color);
+}
+.blue-background {
+    background-color: var(--blue-color);
+}
+
+.badge {
+    border-radius: 75px;
+    width: 150px;
+    height: 150px;
+    line-height: 125px;
+    color: var(--lgt-gray-color);
+    font-size: 30px;
+    border: solid #fff 10px;
+    margin: 15px;
+    padding: 5px;
+
+}
+
+.img-bg {
+    padding: 9px;
+    background: lightgray;
+    border-radius: 10px;
+}
+
+.navbar {
+    height: 8em;
+    margin-top: 70px;
+}
+
+.jumbotron {
+    margin-bottom: 4px;
+    background: none;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+}
+.dots {
+    font-size: 9px;
+    flex-grow: 1;
+    line-height: 18px;
+
+}
+.featured-project {
+    flex-grow: 1;
+    font-family: 'Abel', sans-serif;
+    font-size: 1rem;
+}
+
+.img-fix {
+    height: 100px;
+    width: 100px;
+    overflow: auto;
+}
+
+
+
+.d-red {
+    font-family: 'Anton', sans-serif;
+    background-color: var(--red-color);
+    border-radius: 9px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+
+
+}
+.d-orange {
+    background-color: var(--orange-color);
+    font-family: 'Anton', sans-serif;
+    border-radius: 9px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    margin-left: 6px;
+    margin-top: 10px;
+
+
+}
+.s-green {
+    background-color: var(--green-color);
+    font-family: 'Anton', sans-serif;
+    border-radius: 9px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    margin-left: 6px;
+    margin-top: 10px;
+
+
+}
+.h-blue {
+    background-color: var(--blue-color);
+    font-family: 'Anton', sans-serif;
+    border-radius: 9px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    margin-left: 6px;
+    margin-top: 10px;
+
+}
+
+
+    .img-bg {
+        padding: 9px;
+        background: lightgray;
+        border-radius: 10px;
+        margin: 5px;
+    }
+
+.hr {
+    color: var(--drk-gray-color);
+}
+
