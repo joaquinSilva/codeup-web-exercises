@@ -30,7 +30,7 @@ planetsArray = planetsString.split("|");
     console.log(planetsStringWithBreaks);
 
 
-    var planetsStringUnorderedList = ("<ul>" + planetsArray.join('<li>') + "</ul>");
+    var planetsStringUnorderedList = ("<ul><li>" + planetsArray.join('</li><li>') + "</li></ul>");
 
     console.log(planetsStringUnorderedList);
 
