@@ -1,4 +1,4 @@
-(function() {
+// (function() {
     "use strict";
 
     /**
@@ -12,6 +12,14 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+var person = {
+    "firstName": "Joaquin",
+    "lastName": "Silva"
+    };
+
+console.log(person.firstName);
+console.log(person.lastName);
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +29,12 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    person.sayHello = function () {
+      return "Hello from " + this.firstName + " " + this.lastName + "!";
+    };
+
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -36,11 +50,44 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+// Need to distinguish purchases that are greater than $200 and those that are not;
+// Need to use conditionals;
+// Need to have a function to calculate a 12% discount;
+// Need to return: (0) name of person; (1) amount before discount; (2) discount, if any; and (3) total amount after discount;
+// Need to return the values of 0-3 to the browser;
+
+    var shoppers = [
+        {"name": 'Cameron', "amount": 180},
+        {"name": 'Ryan', "amount": 250},
+        {"name": 'George', "amount": 320}
+    ];
+
+var discount = function(amountBeforeDiscount) {
+    var discountAmount = amountBeforeDiscount * .12;
+    return parseFloat(discountAmount);
+};
+
+function applyDiscount() {
+    for (var i = 0; i < shoppers.length; i++) {
+        if (shoppers[i].amount > 200) {
+            shoppers[i].discountedAmount = shoppers[i].amount - discount(shoppers[i].amount);
+        } else {
+            shoppers[i].discountedAmount = parseFloat(shoppers[i].amount);
+        }
+    }
+}
+
+applyDiscount();
+
+
+function displayData() {
+    for (var i = 0; i < shoppers.length; i++) {
+        console.log(shoppers[i].name + " purchased $" + shoppers[i].amount.toFixed(2) + ", has a discount of $" + discount(shoppers[i].amount).toFixed(2) + ", and has a total discounted price of $" + shoppers[i].discountedAmount.toFixed(2) + ".");
+    }
+}
+
+displayData(shoppers);
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +101,54 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+var books = [
+        {
+            "title": "The Great Gatsby",
+            "author":
+                {
+                 "firstName": "F. Scott",
+                 "lastName": "Fitzgerald"
+                }
+        },
+        {
+            "title": "The Grapes of Wrath",
+            "author":
+                {
+                    "firstName": "John",
+                    "lastName": "Steinbeck"
+                }
+        },
+        {
+            "title": "1984",
+            "author":
+                {
+                    "firstName": "George",
+                    "lastName": "Orwell"
+                }
+        },
+        {
+            "title": "Ulysses",
+            "author":
+                {
+                    "firstName": "James",
+                    "lastName": "Joyce"
+                }
+        },
+        {
+            "title": "To Kill a Mockingbird",
+            "author":
+                {
+                    "firstName": "Harper",
+                    "lastName": "Lee"
+                }
+        }
+    ];
+
+console.log(books[3].title);
+console.log(books[0].author.lastName);
+console.log(books[2].author.firstName);
+
 
     /**
      * TODO:
@@ -80,6 +175,11 @@
      *      ...
      */
 
+books.forEach(function(element, index) {
+    console.log("Book # " + index + " Title: " + element.title + " " + "Author: " + element.author.firstName + " " + element.author.lastName);
+});
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -91,4 +191,36 @@
      *   `showBookInfo` function.
      */
 
-})();
+function createBook(title, firstName, lastName, array) {
+    return array.push(
+        {
+            "title": title,
+            "author":
+                {
+                    "firstName": firstName,
+                    "lastName": lastName
+                }
+        }
+    );
+}
+
+createBook("Lord of the Rings", "J.R.R.", "Tolkien");
+
+console.log(books);
+
+// var newBooksArray = [];
+// createBook("Lord of the Rings", "J.R.R.", "Tolkien", newBooksArray);
+//
+// console.log(newBooksArray);
+
+// function showBookInfo(bookObject) {
+//     books.forEach(title, firstName, lastName);
+//
+//     return
+// }
+
+
+
+
+
+// })();
