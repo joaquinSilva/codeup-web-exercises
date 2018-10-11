@@ -16,23 +16,23 @@
  * Can you refactor your code to use functions?
  */
 
-// var willEnterNumber = confirm("Would you like to enter a number?");
-//
-//
-//     if(willEnterNumber === true) {
-//         var entersNumber = prompt("Great! Please enter a number.");
-//         var isEvenOrOdd = (entersNumber % 2) === 0;
-//         var isEvenOrOddDisplay = (isEvenOrOdd) ? "Your number is an even number!" : "Your number is an odd number!";
-//         var numberPlus100 = parseFloat(entersNumber) + 100;
-//         var positiveOrNegative = (entersNumber > 0) ? "Your number is a positive number!" : "Your number is a negative number!";
-//             if(isNaN(entersNumber) !== true) {
-//                 alert(isEvenOrOddDisplay);
-//                 alert("Your number plus 100 is equal to " + numberPlus100 + ". How interesting!");
-//                 alert(positiveOrNegative);
-//             } else {
-//                 alert("Oops! What you entered is not a number. Too bad, try again!");
-//             }
-//     }
+var willEnterNumber = confirm("Would you like to enter a number?");
+
+
+    if(willEnterNumber === true) {
+        var entersNumber = prompt("Great! Please enter a number.");
+        var isEvenOrOdd = (entersNumber % 2) === 0;
+        var isEvenOrOddDisplay = (isEvenOrOdd) ? "Your number is an even number!" : "Your number is an odd number!";
+        var numberPlus100 = parseFloat(entersNumber) + 100;
+        var positiveOrNegative = (entersNumber > 0) ? "Your number is a positive number!" : "Your number is a negative number!";
+            if(isNaN(entersNumber) !== true) {
+                alert(isEvenOrOddDisplay);
+                alert("Your number plus 100 is equal to " + numberPlus100 + ". How interesting!");
+                alert(positiveOrNegative);
+            } else {
+                alert("Oops! What you entered is not a number. Too bad, try again!");
+            }
+    }
 
 
     // ||
@@ -79,27 +79,27 @@
  * console.logging the function's return value
  */
 
-// function analyzeColor(colorString) {
-//     if (colorString === 'red') {
-//         alert("Red apples are the tastiest apples!")
-//     } else if (colorString === 'orange') {
-//         alert("Orange is my favorite color!")
-//     } else if (colorString === 'yellow') {
-//         alert("Yellow is the color of the sun.")
-//     } else if (colorString === 'green') {
-//         alert("It is fun to jump around in green grass!")
-//     } else if (colorString === 'blue') {
-//         alert("The sky is blue.")
-//     } else if (colorString === 'indigo') {
-//         alert("Hmmm...I don't have much to say about the color indigo.")
-//     } else if (colorString === 'violet') {
-//         alert("Violet is such a happy color!")
-//     } else {
-//         alert("Oops! That color isn't one of our defined colors!")
-//     }
-// }
+function analyzeColor(colorString) {
+    if (colorString === 'red') {
+        alert("Red apples are the tastiest apples!")
+    } else if (colorString === 'orange') {
+        alert("Orange is my favorite color!")
+    } else if (colorString === 'yellow') {
+        alert("Yellow is the color of the sun.")
+    } else if (colorString === 'green') {
+        alert("It is fun to jump around in green grass!")
+    } else if (colorString === 'blue') {
+        alert("The sky is blue.")
+    } else if (colorString === 'indigo') {
+        alert("Hmmm...I don't have much to say about the color indigo.")
+    } else if (colorString === 'violet') {
+        alert("Violet is such a happy color!")
+    } else {
+        alert("Oops! That color isn't one of our defined colors!")
+    }
+}
 
-// console.log(analyzeColor('indigo'));
+console.log(analyzeColor('indigo'));
 
 
 // Don't change the next two lines!
@@ -115,43 +115,43 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message everytime you refresh the page
  */
 
-// console.log(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
 
-// function analyzeColor(colorString) {
-//
-//     switch (colorString) {
-//         case 'red':
-//             alert("Red apples are the tastiest apples!");
-//             break;
-//         case 'orange':
-//             alert("Orange is my favorite color!");
-//             break;
-//         case 'yellow':
-//             alert("Yellow is the color of the sun.");
-//             break;
-//         case 'green':
-//             alert("It is fun to jump around in green grass!");
-//             break;
-//         case 'blue':
-//             alert("The sky is blue.");
-//             break;
-//         case 'indigo':
-//             alert("Hmmm...I don't have much to say about the color indigo.");
-//             break;
-//         case 'violet':
-//             alert("Violet is such a happy color!");
-//             break;
-//         default:
-//             alert("Oops! That color isn't one of our defined colors!");
-//             break;
-//     }
-// }
-// console.log(analyzeColor(randomColor));
+function analyzeColor(colorString) {
+
+    switch (colorString) {
+        case 'red':
+            alert("Red apples are the tastiest apples!");
+            break;
+        case 'orange':
+            alert("Orange is my favorite color!");
+            break;
+        case 'yellow':
+            alert("Yellow is the color of the sun.");
+            break;
+        case 'green':
+            alert("It is fun to jump around in green grass!");
+            break;
+        case 'blue':
+            alert("The sky is blue.");
+            break;
+        case 'indigo':
+            alert("Hmmm...I don't have much to say about the color indigo.");
+            break;
+        case 'violet':
+            alert("Violet is such a happy color!");
+            break;
+        default:
+            alert("Oops! That color isn't one of our defined colors!");
+            break;
+    }
+}
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -160,41 +160,41 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  */
 
-// var color = prompt("Please enter a color!");
-//
-// function analyzeColor(colorString) {
-// var message;
-//
-//     switch (colorString) {
-//         case 'red':
-//             message = "Red apples are the tastiest apples!";
-//             break;
-//         case 'orange':
-//             message = "Orange is my favorite color!";
-//             break;
-//         case 'yellow':
-//             message = "Yellow is the color of the sun.";
-//             break;
-//         case 'green':
-//             message = "It is fun to jump around in green grass!";
-//             break;
-//         case 'blue':
-//             message = "The sky is blue.";
-//             break;
-//         case 'indigo':
-//             message = "Hmmm...I don't have much to say about the color indigo.";
-//             break;
-//         case 'violet':
-//             message = "Violet is such a happy color!";
-//             break;
-//         default:
-//             message = "Oops! That color isn't one of our defined colors!";
-//             break;
-//     }
-//     return alert(message);
-// }
-//
-// analyzeColor(color);
+var color = prompt("Please enter a color!");
+
+function analyzeColor(colorString) {
+var message;
+
+    switch (colorString) {
+        case 'red':
+            message = "Red apples are the tastiest apples!";
+            break;
+        case 'orange':
+            message = "Orange is my favorite color!";
+            break;
+        case 'yellow':
+            message = "Yellow is the color of the sun.";
+            break;
+        case 'green':
+            message = "It is fun to jump around in green grass!";
+            break;
+        case 'blue':
+            message = "The sky is blue.";
+            break;
+        case 'indigo':
+            message = "Hmmm...I don't have much to say about the color indigo.";
+            break;
+        case 'violet':
+            message = "Violet is such a happy color!";
+            break;
+        default:
+            message = "Oops! That color isn't one of our defined colors!";
+            break;
+    }
+    return alert(message);
+}
+
+analyzeColor(color);
 
 
 /* ########################################################################## */
@@ -219,40 +219,40 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-// function calculateTotal(luckyNumber, totalAmount) {
-//
-//     switch (luckyNumber) {
-//         case 0:
-//             discountPercentage = 0;
-//             break;
-//         case 1:
-//             discountPercentage = .10;
-//             break;
-//         case 2:
-//             discountPercentage = .25;
-//             break;
-//         case 3:
-//             discountPercentage = .35;
-//             break;
-//         case 4:
-//             discountPercentage = .5;
-//             break;
-//         case 5:
-//             discountPercentage = 1;
-//             break;
-//         default:
-//             alert("Oops! This isn't a recognized number. Please try again!");
-//             break;
-//     }
-//     var discountedPrice;
-//     var discountPercentage;
-//     discountedPrice = totalAmount - discountPercentage * totalAmount;
-//
-//     return alert("Your new discounted price is $" + discountedPrice.toFixed(2) + "! How lucky!");
-//
-//     }
-//
-// console.log(calculateTotal(1, 100));
+function calculateTotal(luckyNumber, totalAmount) {
+
+    switch (luckyNumber) {
+        case 0:
+            discountPercentage = 0;
+            break;
+        case 1:
+            discountPercentage = .10;
+            break;
+        case 2:
+            discountPercentage = .25;
+            break;
+        case 3:
+            discountPercentage = .35;
+            break;
+        case 4:
+            discountPercentage = .5;
+            break;
+        case 5:
+            discountPercentage = 1;
+            break;
+        default:
+            alert("Oops! This isn't a recognized number. Please try again!");
+            break;
+    }
+    var discountedPrice;
+    var discountPercentage;
+    discountedPrice = totalAmount - discountPercentage * totalAmount;
+
+    return alert("Your new discounted price is $" + discountedPrice.toFixed(2) + "! How lucky!");
+
+    }
+
+console.log(calculateTotal(1, 100));
 
 /**
  * TODO:

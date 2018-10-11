@@ -1,35 +1,35 @@
 "use strict";
 
-// var i = 2;
-//
-// while (i <= 65536) {
-//     console.log(i);
-//     i = i * 2;
-// }
-//
-//
-//
-//
+var i = 2;
+
+while (i <= 65536) {
+    console.log(i);
+    i = i * 2;
+}
 
 
-// my first incomplete attempt
-// var totalCones = Math.floor(Math.random() * 50) + 50;
-//
-// do {
-//    var singleCustomerOrder = Math.floor(Math.random() * 5) + 1;
-//     var remainingCones;
-//     if (remainingCones === 0) {
-//         console.log("Yay! I sold them all!");
-//         break;
-//     }
-//     if (remainingCones < singleCustomerOrder) {
-//         console.log("I cannot sell you " + singleCustomerOrder + " cones when I only have " + remainingCones + " cones left." );
-//         continue;
-//     }
-//
-//     console.log(singleCustomerOrder + " cones sold.");
-//     var remainingCones = totalCones - singleCustomerOrder;
-// } while(totalCones > 0);
+
+
+
+
+my first incomplete attempt
+var totalCones = Math.floor(Math.random() * 50) + 50;
+
+do {
+   var singleCustomerOrder = Math.floor(Math.random() * 5) + 1;
+    var remainingCones;
+    if (remainingCones === 0) {
+        console.log("Yay! I sold them all!");
+        break;
+    }
+    if (remainingCones < singleCustomerOrder) {
+        console.log("I cannot sell you " + singleCustomerOrder + " cones when I only have " + remainingCones + " cones left." );
+        continue;
+    }
+
+    console.log(singleCustomerOrder + " cones sold.");
+    var remainingCones = totalCones - singleCustomerOrder;
+} while(totalCones > 0);
 
 
 // solution from teacher:

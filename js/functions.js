@@ -14,16 +14,16 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-function sayHello(name) {
-    var message = "Hello, " + name + "!";
-    return message;
-}
+// function sayHello(name) {
+//     var message = "Hello, " + name + "!";
+//     return message;
+// }
 
 // ||
-//
-// function sayHello(name) {
-//     return "Hello, " + name + "!";
-// }
+
+function sayHello(name) {
+    return "Hello, " + name + "!";
+}
 
 /**
  * TODO:
@@ -34,8 +34,8 @@ function sayHello(name) {
  */
 
 
-// var helloMessage = sayHello('Joaquín');
-// console.log(helloMessage);
+var helloMessage = sayHello('Joaquín');
+console.log(helloMessage);
 
 
 /**
@@ -45,8 +45,8 @@ function sayHello(name) {
  * console.
  */
 
-// var myName = 'Joaquín';
-// console.log(sayHello(myName));
+var myName = 'Joaquín';
+console.log(sayHello(myName));
 
 
 // Don't modify the following line, it generates a random number between 1 and 3
@@ -70,14 +70,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-//
-// function isTwo(input) {
-//     var output;
-//     var number = (input);
-//     return output = number === 2;
-// }
-//
-// console.log(isTwo(random));
+
+function isTwo(input) {
+    var output;
+    var number = (input);
+    return output = number === 2;
+}
+
+console.log(isTwo(random));
 
 /**
  * TODO:
@@ -91,11 +91,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-// function calculateTip(tipPercentage, totalBill) {
-//     return tipAmount * totalBill;
-// }
-//
-// console.log(calculateTip(10, 100));
+function calculateTip(tipPercentage, totalBill) {
+    return tipAmount * totalBill;
+}
+
+console.log(calculateTip(10, 100));
 
 /**
  * TODO:
@@ -106,20 +106,20 @@ var random = Math.floor((Math.random() * 3) + 1);
 
 
 
-// function calculateTip(bill, percentage) {
-//     return (bill * percentage);
-// }
-//
-// var clientBill = prompt("Please enter the total amount of your bill.");
-// var tipPercentage = prompt("Please enter the percentage you would like to tip.");
-//
-// alert("Your tip amount is $" + calculateTip(clientBill, tipPercentage));
+function calculateTip(bill, percentage) {
+    return (bill * percentage);
+}
 
-//
-//
-// function alertTipMessage(tip, numberPlaces) {
-//     alert("Your tip amount is $" + tip.toFixed(2));
-// }
+var clientBill = prompt("Please enter the total amount of your bill.");
+var tipPercentage = prompt("Please enter the percentage you would like to tip.");
+
+alert("Your tip amount is $" + calculateTip(clientBill, tipPercentage));
+
+
+
+function alertTipMessage(tip, numberPlaces) {
+    alert("Your tip amount is $" + tip.toFixed(2));
+}
 
 
 /**
@@ -137,12 +137,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-// function applyDiscount(originalPrice, discountPercent) {
-//     return originalPrice - (originalPrice * discountPercent);
-// }
-//     console.log(applyDiscount(100, .1));
-//
-//
+function applyDiscount(originalPrice, discountPercent) {
+    return originalPrice - (originalPrice * discountPercent);
+}
+    console.log(applyDiscount(100, .1));
+
+
 
 
 
