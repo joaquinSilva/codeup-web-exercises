@@ -77,15 +77,13 @@ function applyDiscount() {
     }
 }
 
-applyDiscount();
-
-
 function displayData() {
     for (var i = 0; i < shoppers.length; i++) {
         console.log(shoppers[i].name + " purchased $" + shoppers[i].amount.toFixed(2) + ", has a discount of $" + discount(shoppers[i].amount).toFixed(2) + ", and has a total discounted price of $" + shoppers[i].discountedAmount.toFixed(2) + ".");
     }
 }
 
+applyDiscount();
 displayData(shoppers);
 
 
@@ -176,7 +174,7 @@ console.log(books[2].author.firstName);
      */
 
 books.forEach(function(element, index) {
-    console.log("Book # " + index + " Title: " + element.title + " " + "Author: " + element.author.firstName + " " + element.author.lastName);
+    console.log("Book # " + (index + 1) + "\n" + " Title: " + element.title + "\n" + "Author: " + element.author.firstName + " " + element.author.lastName + "\n" + "___");
 });
 
 
@@ -204,23 +202,23 @@ function createBook(title, firstName, lastName, array) {
     );
 }
 
-createBook("Lord of the Rings", "J.R.R.", "Tolkien");
+// createBook("Lord of the Rings", "J.R.R.", "Tolkien");
 
-console.log(books);
-
-// var newBooksArray = [];
-// createBook("Lord of the Rings", "J.R.R.", "Tolkien", newBooksArray);
+// console.log(books);
 //
+var newBooksArray = [];
+createBook("Lord of the Rings", "J.R.R.", "Tolkien", newBooksArray);
+
 // console.log(newBooksArray);
 
-// function showBookInfo(bookObject) {
-//     books.forEach(title, firstName, lastName);
-//
-//     return
+// function showBookInfo(bookObject, array) {
+//     return console.log(array[bookObject]);
 // }
-
-
-
-
+//
+// // showBookInfo(0, newBooksArray);
+// //
+// // books.forEach(showBookInfo(0,) {
+// //     console.log("Book # " + index + " Title: " + element.title + " " + "Author: " + element.author.firstName + " " + element.author.lastName);
+// });
 
 // })();
