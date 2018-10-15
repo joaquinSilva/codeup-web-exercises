@@ -17,12 +17,12 @@
                 var area = this.getArea();
 
                 if (doRounding === true) {
-                    area = Math.round(this.getArea());
+                    area = Math.round(area);
                 }
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
 
-            return console.log("Area of a circle with radius: " + this.radius + ", is: " + area);
+            console.log("Area of a circle with radius: " + this.radius + ", is: " + area);
         }
     };
 
