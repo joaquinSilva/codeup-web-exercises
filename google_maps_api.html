@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps API Exercise</title>
+    <style type="text/css">
+        #mapWindow {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buffet City is my favorite restaurant in San Antonio!</h1>
+
+    <div id="mapWindow"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=INSERT-KEY-HERE"></script>
+
+    <script type="text/javascript">
+        (function() {
+            "use strict";
+
+            var mapOptions = {
+                zoom: 16,
+                center: {
+                    lat: 29.426791,
+                    lng: -98.489602
+                }
+            };
+            var map = new google.maps.Map(document.getElementById("mapWindow"), mapOptions);
+
+            var address = "2902 Goliad Rd #109, San Antonio, TX 78223";
+
+            var geocoder = new google.maps.Geocoder();
+
+
+            geocoder.geocode({ "address": address }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                } else {
+                    alert("Geocoding was not successful - STATUS: " + status);
+                }
+            });
+
+            var restaurant = { lat: 29.3545, lng: -98.431 };
+
+            var buffetCity = new google.maps.Marker({
+                position: restaurant,
+                map: map
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: "Changing the world, one delicious buffet plate at a time."
+            });
+
+            infowindow.open(map, buffetCity);
+
+        })();
+
+
+    </script>
+</body>
+</html>

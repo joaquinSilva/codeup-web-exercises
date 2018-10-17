@@ -5,6 +5,16 @@
     <title>DOM Event Bonuses</title>
 </head>
 <body>
+<div>
+    <input class="stopwatch" id="stopwatch" type="text" value="0:0:0">
+    <label for="stopwatch">Stop Watch</label><br>
+    <input class="button" id="startandstopbutton" type="button" value="Start/Stop" onClick="startandstop();"><br>
+    <input class="button" id="marklapbutton" type="button" value="Split/Mark Lap" onClick="marklap();" ><br>
+    <input class="button" id="resetbutton" type="button" value="Reset Stopwatch" onClick="resetstopwatch();"><br>
+    <label for="lapdetails">Lap Details</label>
+    <textarea class="lap" id="lapdetails"></textarea>
+</div>
+
 <script src="js/dom_event_bonuses.js"></script>
 </body>
 </html>

@@ -14,6 +14,10 @@
 // 2) add delete buttons for each stored time that removes the time from the aside div
 // 3) add keyboard events to control starting, pausing, and resetting
 //
+
+// stop watch source: https://knowpapa.com/js-stopwatch/
+
+
 // BONUS 2 - create a Hangman game
 //
 // Allow user 1 to enter a random word for user 2 to try to guess.
@@ -25,3 +29,4 @@
 // - do not accept inputs that are more than one letter or are not letters (ignore case)
 //
 // BONUS 3 - Create a zoomable font size effect with mouse scroll
+
