@@ -29,13 +29,25 @@
 
     $(document).ready(function() {
 
-        $("li").css("font-size", '20px');
-        $('h1').css('background', 'green');
-        $('p').css('background', 'green');
-        $('li').css('background', 'green');
-        alert(allH1s.html());
+        $('h1').click(function() {
+                $(this).css('background', 'yellow');
+            });
 
-        $('h1, p, li').css('background', 'green');
+        $('p').dblclick(function(e) {
+           $(this).css('font-size', '18px');
+        });
+
+        $('li').hover(
+            function() {
+            $(this).css('color', 'red');
+            $(this).css('font-size', '20px');
+            },
+            function() {
+            $(this).css('color', 'black');
+            $(this).css('font-size', '16px');
+            }
+        );
+
 
     });
 
