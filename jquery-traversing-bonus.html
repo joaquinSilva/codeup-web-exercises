@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>J-Query Traversing Bonus</title>
+    <style>
+        .button {
+            margin: 0 165px;
+            background-color:  yellow;
+            float:  left;
+            width: 75px;
+            height: 50px;
+            border-radius: 15%;
+            font-weight: bold;
+            border: 2px solid black;
+            font-size: 16px;
+        }
+
+        .buttonContainer {
+            height: 75px;
+            width:  100%;
+            float: left;
+            padding: auto;
+        }
+        .content {
+            float: left;
+        }
+
+        h1 {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .first {
+            background-image: url("img/starry_night.jpg");
+            background-size: cover;
+            background-position: center;
+            width:  300px;
+            height: 300px;
+            border: 10px solid #663300;
+            float: left;
+            margin: 40px;
+            border-radius: 5%;
+        }
+        .second {
+            background-image: url('img/self-portrait.jpg');
+            background-size: cover;
+            background-position: center;
+            width:  300px;
+            height: 300px;
+            border: 10px solid #663300;
+            float: left;
+            margin: 40px;
+            border-radius: 5%;
+        }
+        .third {
+            background-image: url("img/scream.jpg");
+            background-size: cover;
+            background-position: center;
+            width:  300px;
+            height: 300px;
+            border: 10px solid #663300;
+            float: left;
+            margin: 40px;
+            border-radius: 5%;
+        }
+    </style>
+</head>
+<body>
+<h1>J-Query Traversing</h1>
+<div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+</div>
+<div class="buttonContainer">
+    <button type="button" class="firstButton button">Swap</button>
+    <button type="button" class="secondButton button">Swap</button>
+    <button type="button" class="thirdButton button">Swap</button>
+</div>
+<div class="content">
+<p>Create 3 divs that each look like a picture Frame; each one should have a unique background image and a button underneath that swaps the image from the frame. Use Traversing functions of jQuery to accomplish this.</p>
+<p>The rules are the following:</p>
+<ul>
+    <li>The left frame swaps to the right and takes the image from the frame in the center.</li>
+    <li>The center frame swaps randomly to either the left or right.</li>
+    <li>The right frame swaps to the left and takes the image from the frame in the center.</li>
+</ul>
+</div>
+<script src="js/jquery-2.2.4.min.js"></script>
+<script>
+    "use strict";
+
+    $(document).ready(function() {
+
+        $('div').children().first().addClass('first');
+        $('div').children().first().next().addClass('second');
+        $('div').children().first().next().next().addClass('third');
+
+        $('.firstButton').click(function() {
+            var currentClass = $('div').children().first().attr('class');
+            var neighborClass = $('div').children().first().next().attr('class');
+                $('div').children().first().removeClass(currentClass).addClass(neighborClass);
+                $('div').children().first().next().removeClass(neighborClass).addClass(currentClass);
+            });
+
+        $('.secondButton').click(function() {
+            var currentClass = $('div').children().first().next().attr('class');
+            var leftNeighborClass = $('div').children().first().attr('class');
+            var rightNeighborClass = $('div').children().first().next().next().attr('class');
+            var chosenValue = Math.random() < 0.5 ? 1 : 2;
+            // https://stackoverflow.com/questions/9730966/how-to-decide-between-two-numbers-randomly-using-javascript
+
+            if (chosenValue === 1) {
+                $('div').children().first().next().removeClass(currentClass).addClass(leftNeighborClass);
+                $('div').children().first().removeClass(leftNeighborClass).addClass(currentClass);
+            }
+
+            if (chosenValue === 2) {
+                $('div').children().first().next().removeClass(currentClass).addClass(rightNeighborClass);
+                $('div').children().first().next().next().removeClass(rightNeighborClass).addClass(currentClass);
+            }
+        });
+
+        $('.thirdButton').click(function() {
+            var currentClass = $('div').children().first().next().next().attr('class');
+            var neighborClass = $('div').children().first().next().attr('class');
+            $('div').children().first().next().next().removeClass(currentClass).addClass(neighborClass);
+            $('div').children().first().next().removeClass(neighborClass).addClass(currentClass);
+        });
+
+
+
+                // $('frame').first().toggleClass('second');
+                // $('frame').first().next().toggle('first');
+
+            //
+            //     $(this).children().last().toggleClass('highlighted');
+            // });
+        // });
+
+
+
+
+    });
+
+</script>
+</body>
+</html>
