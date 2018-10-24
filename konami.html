@@ -10,91 +10,35 @@
 <script>
     "use strict";
 
-    var konamiCode = '38,38,40,40,37,39,37,39,66,65';
+    var konamiArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    var userArray = [];
+
 
 
     $(document).keyup(function(event) {
-
-
-
-
-
-
+        var newKey = event.keyCode;
+        if (newKey === 13) {
+            console.log(checkForKonami(konamiArray, userArray)); // fire checkKonami function
+        } else {
+            userArray.push(newKey);
+        }
     });
 
-    //
-    //
-    // var keystroke = $(document).keyup(function(event) {
-    //     var newKey = event.keyCode;
-    //     if (newKey === 13) {
-    //         console.log("stop");
-    //     } else {
-    //         return newKey;
-    //     }
-    // });
-    //
-    // function convertKey(input) {
-    //         for (var i = 0; i < 10; i++) {
-    //             var userCode = [];
-    //             console.log(input);
-    //             console.log(userCode);
-    //             userCode = userCode.push(input);
-    //         }
-    //         return userCode;
-    //     }
-    //
-    // convertKey(keystroke);
-    //
-    //
-    //
+    // check if konami and user array are the same (checkKonami function)
+    function checkForKonami(konamiArray, userArray) {
 
-
-        // function convertKey() {
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        // }
-        //
-        //
-        //
-        // convertKey();
-
-        // if (userCode.length < 10) {
-        //     convertKey();
-        // } else {
-        //     console.log('we have a complete code')
-        // }
-
-
-        // if (inputCode.length === 10) {
-        //     console.log(inputCode.join(','))
-        // }
-        //
-        //     // if (event.keyCode === "13") {
-        //     //     return inputCode;
-
-
-
-            // do ;
-            // while (inputCode.length < 10);
-            // return inputCode.join(',');
-
-
-        // codeEntered();
-        // function isKonamiCode(input) {
-        //     if (input === konamiCode) {
-        //         console.log("You have added 30 lives!");
-        //     } else console.log("please try again!");
-        // }
-        //
-        // isKonamiCode(codeEntered);
-
+        if (konamiArray.length !== userArray.length) {
+            return false;
+        }
+        for (var i = 0; i < konamiArray.length; i++) {
+            if (userArray[i] !== konamiArray[i]) {
+                return false;
+            } else {
+                alert('You now have 30 lives!');
+                return true;
+            }
+        }
+    }
 
 
         // up arrow keycode = 38

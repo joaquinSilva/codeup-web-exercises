@@ -3,8 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <title>J-Query Faq</title>
+    <style>
+        .invisible {
+            display: none;
+        }
+        .highlighted {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
+    <dl>
+        <dt>Lorem ipsum</dt>
+        <dd class="invisible">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+        <dt>Pharetra massa</dt>
+        <dd class="invisible">Pharetra massa massa ultricies mi.</dd>
+        <dt>Fringilla</dt>
+        <dd class="invisible">Fringilla phasellus faucibus scelerisque eleifend.</dd>
+        <dt>Scelerisque</dt>
+        <dd class="invisible">Scelerisque fermentum dui faucibus in ornare quam.</dd>
+        <dt>Viverra</dt>
+        <dd class="invisible">Viverra aliquet eget sit amet tellus cras.</dd>
+        <dt>Sit amet</dt>
+        <dd class="invisible">Sit amet nulla facilisi morbi tempus iaculis.</dd>
+        <dt>Lobortis</dt>
+        <dd class="invisible">Lobortis mattis aliquam faucibus purus in massa tempor.</dd>
+        <dt>Egestas</dt>
+        <dd class="invisible">Egestas egestas fringilla phasellus faucibus scelerisque eleifend.</dd>
+        <dt>Interdum posuere</dt>
+        <dd class="invisible">Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing.</dd>
+        <dt>Id faucibus</dt>
+        <dd class="invisible">Id faucibus nisl tincidunt eget.</dd>
+    </dl>
 
+     <h3>Arches</h3>
+     <ul id="">
+         <li>This is a park.</li>
+         <li>This is a national park.</li>
+         <li>This park has grass.</li>
+         <li>This park is in the United States of America.</li>
+     </ul>
+    <h3>Badlands</h3>
+    <ul id="">
+        <li>This is a park.</li>
+        <li>This is a national park.</li>
+        <li>This park has grass.</li>
+        <li>This park is in the United States of America.</li>
+    </ul>
+    <h3>Carlsbad Caverns</h3>
+    <ul id="">
+        <li>This is a park.</li>
+        <li>This is a national park.</li>
+        <li>This park has grass.</li>
+        <li>This park is in the United States of America.</li>
+    </ul>
+    <a href="">Click here to see more!</a>
+    <button>Click here for Yellow!</button>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script>
+        "use strict";
+
+        $(document).ready(function() {
+
+        $('a').click(function() {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
+
+
+        // $('dt').click(function() {
+        //     $(this).toggleClass('highlighted');
+        // });
+        //
+        //
+        $('body').on('click', 'dt', (function() {
+            $(this).toggleClass('highlighted');
+        }));
+
+
+        $('button').click(function() {
+
+            $('ul').each(function(index) {
+
+                $(this).children().last().toggleClass('highlighted');
+            });
+        });
+
+
+        $('h3').click(function() {
+            $('h3').next().css('font-weight', 'bold');
+        });
+
+
+        $('li').click(function() {
+           $(this).parent().children().first().css('color', 'blue');
+
+        });
+
+
+        });
+
+    </script>
 </body>
 </html>
