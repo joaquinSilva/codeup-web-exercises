@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe jQuery Project</title>
+    <style>
+        .xMarker {
+            color:  yellow;
+            font-size: 150px;
+            margin: auto;
+        }
+        .oMarker {
+            color:  purple;
+            font-size: 100px;
+            margin-bottom: auto;
+            padding-top: 25px;
+
+
+        }
+
+        .red {
+            background-color: red;
+
+        }
+        .blue {
+            background-color: blue;
+
+        }
+        .green {
+            background-color: green;
+
+        }
+        .tile {
+            height: 150px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+<h1>Tic Tac Toe!</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+
+        </div>
+
+
+        <div class="col-6">
+            <div class="container">
+                <div class="row">
+                    <div class="tile col-4 red align-middle text-center"></div>
+                    <div class="tile col-4 blue align-middle text-center"></div>
+                    <div class="tile col-4 green align-middle text-center"></div>
+                </div>
+                <div class="row">
+                    <div class="tile col-4 blue text-center"></div>
+                    <div class="tile col-4 blue text-center"></div>
+                    <div class="tile col-4 blue text-center"></div>
+                </div>
+                <div class="row">
+                    <div class="tile col-4 green text-center"></div>
+                    <div class="tile col-4 green text-center"></div>
+                    <div class="tile col-4 green text-center"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-3">
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+    // https://forum.jquery.com/topic/beginner-function-toggle-deprecated-what-to-use-instead
+    $.fn.toggleClick=function() {
+        var functions=arguments;
+        return this.click(function(){
+            var iteration=$(this).data('iteration')||0;
+            //	console.log(iteration)
+            functions[iteration].apply(this,arguments);
+            iteration= (iteration+1) %functions.length;
+            $(this).data('iteration',iteration)
+        })
+    };
+
+    $(document).ready(function() {
+
+        $(function(){
+            $('.tile').toggleClick(function() {
+                $(event.currentTarget).html('<i class="fas fa-dot-circle oMarker"></i>');
+                },function(){$(event.currentTarget).html('<i class="fas fa-times xMarker"></i>');})
+        })
+
+
+
+
+        //
+        // $('.tile').click(function() {
+        //
+        //     $('.tile').toggle(function(e) {
+        //         $(this).html('<i class="fas fa-dot-circle oMarker"></i>');
+        //     }, function() {
+        //         $(this).html('<i class="fas fa-times xMarker"></i>');
+        //     });
+        //
+        //
+        // });
+
+
+
+
+        // callbacks.empty();
+        // http://api.jquery.com/callbacks.empty/
+
+
+
+
+     // $('.tile').click(function() {
+     //     $(this).html('<i class="fas fa-dot-circle oMarker"></i>');
+     // });
+     //
+     // // $('.tile').click(function() {
+     //     $(this).html('<i class="fas fa-times xMarker"></i>');
+     // // });
+
+    });
+</script>
+</body>
+</html>
