@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>J-Query Faq</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
+
         .invisible {
             display: none;
         }
@@ -13,6 +15,11 @@
     </style>
 </head>
 <body>
+    <div>
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span>X</span>
+    </div>
+    <h2>Please register for our site at no cost!</h2>
     <dl>
         <dt>Lorem ipsum</dt>
         <dd class="invisible">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
@@ -60,6 +67,9 @@
     <a href="">Click here to see more!</a>
     <button>Click here for Yellow!</button>
     <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script>
         "use strict";
 
@@ -99,6 +109,27 @@
            $(this).parent().children().first().css('color', 'blue');
 
         });
+
+        $('span').click(function() {
+            $(this).parent().hide();
+        });
+
+        $('ul').hide();
+
+        $('h3').click(function() {
+           $(this).next().slideToggle();
+        });
+
+        $('h2').hide();
+
+        $('h2').delay(8000).fadeIn(2000);
+
+
+        // setTimeout(function () {
+        //     $('h2').fadeIn();
+        //     }, 8000);
+        // });
+
 
 
         });
