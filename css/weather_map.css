@@ -1,0 +1,25 @@
+.singleCard {
+    background-color: #fff;
+    float:  left;
+    height: 40%;
+    width: 25%;
+    margin-left: 25px;
+
+}
+
+#currentWeather {
+    background-color: rgb(162 220 255);
+    height: 500px;
+    box-sizing: content-box;
+}
+
+.conditions {
+    margin: 10px;
+    text-align: center;
+}
+
+h1, h3 {
+    padding: 15px;
+    margin-top: 20px;
+}
+
