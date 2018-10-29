@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="css/weather_map.css">
+</head>
+<body>
+<div id="currentWeather">
+    <h1>Weather Application</h1>
+    <h3>Current Weather</h3>
+    <h3 id="city">City</h3>
+    <div class="cardsContainer">
+    </div>
+    </div>
+</div>
+<div class="latLong">
+    <form>
+        <input name='lat' id='lat' type="text">
+        <label for="lat">Latitude</label>
+        <input id='lon' type="text">
+        <label name='lon' for="lon">Longitude</label>
+    </form>
+    <button id="submit" type="submit">Submit Lat/Long</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    /**
+     * author Justin Reich
+     * getMinMaxDayTemp returns the minimum and maximum temp for a given day based on the response of a query to the OpenWeatherMap 5-Day Hourly Forecast API
+     * @param data - the response object from the OpenWeatherMap 5-Day Hourly Forecast API
+     * @param day - a number (1-5) representing which day in the next five days to get the min and max temp for;l
+     * @returns {{min: T, max: T}}
+     */
+
+    const getMinMaxDayTemp = (data, day) => {
+        const temps = data.list.slice(day * 8 - 8, day * 8)
+            .reduce((prev, curr) => {
+                prev.push(curr.main.temp);
+                return prev;
+            }, []).sort();
+        return {min: temps.shift(), max: temps.pop()};
+    };
+
+    // $.get("http://api.openweathermap.org/data/2.5/forecast", {
+    //     APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+    //     q: "San Antonio, US",
+    //     units: "imperial"
+    // }).done(function(data) {
+    //     console.log(getMinMaxDayTemp(data, 1));
+    // });
+
+    function renderWeather(data){
+        $('.cardsContainer').html('');
+        var html = ('');
+        var minMax = getMinMaxDayTemp(data, 1);
+        // var day;
+        for(var i = 0; i < 24; i+= 8) {
+            // if (-1 < i < 8) {
+            //     day = 1;
+            // }
+            // if (7 < i < 16) {
+            //     day = 2;
+            // }
+            // if (15 < i < 24) {
+            //     day = 3;
+            // }
+            // if (23 < i < 32) {
+            //     day = 4;
+            // }
+            // if (31 < i < 40) {
+            //     day = 5;
+            // }
+
+
+
+        html += '<div class="singleCard">';
+        html += '<div class="conditions">';
+        html += minMax.max + ' / ' + minMax.min;
+        html += '</div><div class="conditions">';
+        html += '<img src=http://openweathermap.org/img/w/';
+        html += data.list[i].weather[0].icon;
+        html += '.png></div><div class="conditions">Clouds: ';
+        html += data.list[i].weather[0].description;
+        html += '</div><div class="conditions">Humidity: ';
+        html += data.list[i].main.humidity;
+        html += '</div><div class="conditions">Wind: ';
+        html += data.list[i].wind.speed;
+        html += '</div><div class="conditions">Pressure: ';
+        html += data.list[i].main.pressure;
+        html += '</div></div>';
+
+        }
+        return html;
+    }
+
+    // var callWeather = $.get("http://api.openweathermap.org/data/2.5/forecast", {
+    //         APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+    //         q: "San Antonio, US",
+    //         units: "imperial"
+    //     }).done(function(data){
+    //         console.log(data);
+    //         $('.cardsContainer').append(renderWeather(data));
+    //         $('#city').append('<div>' + data.city.name + '</div>');
+    //     })
+    //     .fail(function(){
+    //         alert('you suck!');
+    //     });
+
+
+
+    $('#submit').click(function() {
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+            lat: ($('#lat').val()),
+            lon: ($('#lon').val()),
+            units: "imperial"
+        }).done(function(data){
+            console.log(parseFloat($('#lat').val()));
+            console.log(parseFloat($('#lon').val()));
+            $('.cardsContainer').append(renderWeather(data));
+            $('#city').html('<div>' + data.city.name + '</div>');
+        })
+            .fail(function(){
+                alert('you suck!');
+            });
+
+
+    });
+
+
+
+
+});
+</script>
+</body>
+</html>

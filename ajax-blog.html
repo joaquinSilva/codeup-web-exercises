@@ -6,20 +6,48 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-<div id="posts"></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<div id="posts">
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script>
 $(document).ready(function() {
     "use strict";
 
-    alert('hello');
+    function renderBlogPosts(data) {
+        $('#posts').html('');
+        var html = ('');
+        for(var i = 0; i < data.length; i++) {
+            html += '<div><h2>';
+            html += data[i].title;
+            html += '</h2><h6>';
+            html += data[i].date;
+            html += '</h6><h4>';
+            html += data[i].categories;
+            html += '</h4><p>';
+            html += data[i].content;
+            html += '</p></div>';
+            }
+        return html;
+    }
 
 
+    $.ajax("data/blog.json").done(function(data){
+        $('#posts').append(renderBlogPosts(data));
+        })
+        .fail(function(){
+            alert('Oops! Something went wrong!')
+        });
 
-
-
+    setTimeout(function() {
+        $.ajax("data/blog.json").done(function(data){
+            $('#posts').append(renderBlogPosts(data));
+        })
+            .fail(function(){
+                alert('Oops! Something went wrong!')
+            });
+    }, 10000);
 
 
 
