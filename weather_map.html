@@ -24,6 +24,7 @@
     <button id="submit" type="submit">Submit Lat/Long</button>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=INSERT-KEY-HERE"></script>
 <script>
 $(document).ready(function() {
 
@@ -96,18 +97,18 @@ $(document).ready(function() {
         return html;
     }
 
-    // var callWeather = $.get("http://api.openweathermap.org/data/2.5/forecast", {
-    //         APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
-    //         q: "San Antonio, US",
-    //         units: "imperial"
-    //     }).done(function(data){
-    //         console.log(data);
-    //         $('.cardsContainer').append(renderWeather(data));
-    //         $('#city').append('<div>' + data.city.name + '</div>');
-    //     })
-    //     .fail(function(){
-    //         alert('you suck!');
-    //     });
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+            q: "San Antonio, US",
+            units: "imperial"
+        }).done(function(data){
+            console.log(data);
+            $('.cardsContainer').append(renderWeather(data));
+            $('#city').html('<div>' + data.city.name + '</div>');
+        })
+        .fail(function(){
+            alert('you suck!');
+        });
 
 
 
@@ -126,14 +127,81 @@ $(document).ready(function() {
             .fail(function(){
                 alert('you suck!');
             });
-
-
     });
 
 
+    var mapOptions = {
+        zoom: 16,
+        center: {
+            lat: 29.426791,
+            lng: -98.489602
+        }
+    };
 
 
 });
+
+// MAKE THE WEATHER FORECAST
+
+// make a function to get the weather object from the OpenWeatherMap API
+
+// base url should be "http://api.openweathermap.org/data/2.5/forecast"
+
+// practice writing console.logs of various parts of the OpenWeatherMap object...
+// console.log the current weather description
+// console.log the humidity of the 2nd day
+// console.log the humidity of all the days (use a for loop)
+// console.log the temperature of the 3rd day in celsius
+// console.log the temperature of the 3rd day in Fahrenheit
+// console.log all types of information you will ultimately display for a single day in the 3-day forecast div
+// console.log all type of information you will ultimately display for all days in the 3-day forecast divs
+
+// write html and css to make/style a three-day forecast set of divs (may use design from curriculum)
+
+// create a function to append specific parts of the OpenWeatherMap map object to the DOM and call it in the .done() of the OpenWeatherMap map GET request.
+
+// remember to first console.log specific data from the OpenWeatherMap object, then work on adding to the DOM
+
+// read and reread the curriculum and OpenWeatherMap docs carefully on how to get an image of the weather forecast
+
+// hint: "http://openweathermap.org/img/w/" + whateverTheWeatherIconValueIs
+
+// verify that the OpenWeatherMap data populates by hard coding in lat and lon values
+
+// create lat and lon variables to hold lat and lon values.
+
+// add lat and lon properties to the function that calls the OpenWeatheMap API GET request
+
+// add an input field for lat and lon with button that fires a new request to the OpenWeatherMap API and passes the lat and lon values from the input fields into the request.
+
+
+
+// CREATE THE MAP
+
+// using syntax from the previous Maps exercise, add a map below the OpenWeatherMap forecast
+
+// add a marker to the map and make it draggable
+
+// create a marker drag event that console logs the lat and lon where the marker is dropped
+
+
+
+// WIRE UP MAP TO WEATHER API
+
+// add the function call that makes the Weather API request to the marker drag event and pass in the lat and lon values of the marker to the Weather API request function
+
+// Bonuses
+// - allow the user to search by place name, then move the map to that location and update the weather (will need to make a geocoding request, then use the results of the geocoding request in a call to the open weather api)
+//
+// - allow users to specify how many days they want a forecast for (e.g. users can specify if they want just today’s weather, a 2-day forecast, a 3-day forecast, a 5-day forecast etc.)
+//
+// - use a google maps info window to display the current weather conditions above the marker for the place
+//
+// - allow users to choose how much detail they want in their forecast (just the high and low for the day? do they also want to see an icon? wind speed, humidity, etc)
+//
+// - when a geocoding request is made, google responds with a list of places (starting with the closest match). When the user searches for a location, show them all the results for that location in a `select` element, and when they change the `select`, update the map and the displayed weather accordingly
+
+
 </script>
 </body>
 </html>
