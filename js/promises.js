@@ -12,22 +12,11 @@ function wait(num) {
 wait(5000).then(() => console.log('You\'ll see this after 5 seconds'));
 
 
-
-// const getLastCommit = (githubUserName) => {
-//     fetch(`https://api.github.com/users/${githubUserName}/events/public`,
-//         {headers: {'Authorization': 'token 3d0607599e538b1dac466d30837a0205aa848fc5' }})
-//         .then(response => response.json()).then(data => {
-//             const pushEvents = data.filter(event => event.type === 'PushEvent');
-//             return pushEvents;
-//         }
-//     );
-// };
-
 let githubUserName = 'joaquinSilva';
 
 const getLatestPushEvent = (githubUserName) => {
     fetch(`https://api.github.com/users/${githubUserName}/events/public`,
-        {headers: {'Authorization': 'token 3d0607599e538b1dac466d30837a0205aa848fc5' }})
+        {headers: {'Authorization': 'token TOKEN#' }})
         .then(response => response.json()).then(data => {
             const pushEvents = data.filter(event => event.type === 'PushEvent');
             const urlLastCommit = pushEvents[0].payload.commits[0].url;
@@ -38,7 +27,7 @@ const getLatestPushEvent = (githubUserName) => {
 
 const getLastCommit = (url) => {
     fetch(url,
-        {headers: {'Authorization': 'token 3d0607599e538b1dac466d30837a0205aa848fc5' }})
+        {headers: {'Authorization': 'token TOKEN#' }})
         .then(response => response.json()).then(data => {
             const commitDate = data.commit.committer.date;
             displayLastCommitDay(commitDate);
